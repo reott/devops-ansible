@@ -1,0 +1,6 @@
+- name: Plane nächtlichen Neustart
+  cron:
+    name: "Nächtlicher Neustart"
+    minute: 0
+    hour: 4
+    job: /sbin/shutdown -r now

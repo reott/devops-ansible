@@ -1,0 +1,6 @@
+- name: test
+  hosts: localhost
+  roles:
+    - ufw
+    - cron
+    - ssh

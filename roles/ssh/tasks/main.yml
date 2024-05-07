@@ -1,0 +1,14 @@
+- name: Deaktiviere Passwortauthentifizierung
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication'
+    line: 'PasswordAuthentication no'
+    state: present
+  notify: Neustart SSH
+
+  handlers:
+    - name: Neustart SSH
+      service:
+        name: sshd
+        state: restarted
+  

@@ -1,0 +1,19 @@
+- name: Stelle sicher, dass UFW installiert ist
+  apt:
+    name: ufw
+    state: present
+
+- name: Schließe alle Ports
+  command: ufw reset
+  ignore_errors: true
+
+- name: Öffne erforderliche Ports
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  loop:
+    - 22
+    - 80
+    - 443
+    - 110
+    - 587
