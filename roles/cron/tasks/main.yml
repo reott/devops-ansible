@@ -1,6 +1,6 @@
-- name: Plane nächtlichen Neustart
+- name: reboot server
   cron:
-    name: "Nächtlicher Neustart"
+    name: "scheduled reboot"
     minute: 0
     hour: 4
     job: /sbin/shutdown -r now

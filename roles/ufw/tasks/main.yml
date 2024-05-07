@@ -1,19 +1,9 @@
-- name: Stelle sicher, dass UFW installiert ist
-  apt:
-    name: ufw
-    state: present
-
-- name: Schließe alle Ports
-  command: ufw reset
-  ignore_errors: true
-
-- name: Öffne erforderliche Ports
-  ufw:
-    rule: allow
-    port: "{{ item }}"
-  loop:
-    - 22
-    - 80
-    - 443
-    - 110
-    - 587
+- name: do ufw stuff
+  command: 
+    - ufw enable
+    - ufw deny incoming
+    - ufw allow ssh
+    - ufw allow http
+    - ufw allow https
+    - ufw allow pop3
+    - ufw allow smtp
