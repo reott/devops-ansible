@@ -1,6 +1,6 @@
 - name: configure new server
-  hosts: local
-  become: yes
+  hosts: all
+  become: true
   roles:
     - ufw
     - cron
