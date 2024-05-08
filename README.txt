@@ -1,1 +1,1 @@
-sudo ansible-playbook -i hosts playbook.yml
+sudo ansible-playbook -i hosts.yml playbook.yml
